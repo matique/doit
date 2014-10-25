@@ -67,3 +67,5 @@ $PROJ/.doit/push
     where:
       - bob@sample.com
       - alice@customer.com
+
+Copyright (c) 2014 [Dittmar Krall], released under the MIT license
