@@ -1,0 +1,13 @@
+env:
+ - DIR=tmp OPTION=y
+ - x=<%= 1 + 3 %>
+a:
+ - 1
+where:
+ - doit
+# - bob@sample.com
+# - alice@customer.com
+# - app@localhost
+# - login@localhost
+# - docu@localhost
+# - hour4@localhost
