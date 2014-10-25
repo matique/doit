@@ -9,10 +9,10 @@ Gem::Specification.new do |gem|
 
   gem.authors  = ['Dittmar Krall']
   gem.email    = 'dittmar.krall@matique.de'
-  gem.homepage = 'http:/www.matique.de'
+  gem.homepage = 'http://www.matique.de'
   gem.license  = 'MIT'
 
-  gem.add_dependency 'micro-optparse'
+  gem.add_dependency 'micro-optparse', '~> 0'
 
   gem.files         = `git ls-files`.split("\n")
   gem.test_files    = `git ls-files -- test`.split("\n")
