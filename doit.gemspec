@@ -12,7 +12,7 @@ Gem::Specification.new do |gem|
   gem.homepage = 'http://www.matique.de'
   gem.license  = 'MIT'
 
-  gem.add_dependency 'micro-optparse', '~> 0'
+  gem.add_dependency 'micro-optparse', '~> 1'
 
   gem.files         = `git ls-files`.split("\n")
   gem.test_files    = `git ls-files -- test`.split("\n")
