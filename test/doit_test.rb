@@ -1,7 +1,5 @@
 require 'test_helper'
 require 'doit'
-#require 'import'
-#require 'my'
 
 describe Doit do
 
