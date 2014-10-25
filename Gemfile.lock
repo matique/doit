@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     doit (0.2.4)
-      micro-optparse
+      micro-optparse (~> 1)
 
 GEM
   remote: https://rubygems.org/
