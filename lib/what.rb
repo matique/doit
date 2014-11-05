@@ -17,7 +17,7 @@ class What
     @env   = [@env].flatten.compact
 
     remote = Doit.options[:remote]
-    @where   = remote  if remote
+    @where   = remote  if remote && remote != '---'
     @where ||= Dir.pwd   # default is current directory
     @where   = [@where].flatten.compact
 
