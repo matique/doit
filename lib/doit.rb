@@ -23,6 +23,7 @@ class Doit
     hsh = Import.list
     hsh.sort.each { |abb, long|
       puts "#{abb}\t- #{long}"
+      next  unless options[:verbose]
       lines = `grep -i 'usage\\|summary' #{long} | grep '^#'`.split("\n")
       lines.each { |line|
 	next  unless line
