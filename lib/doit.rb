@@ -3,9 +3,10 @@ require 'run'
 require 'import'
 require 'what'
 
-class Doit
+Doit = Object.new
+class << Doit
 
-  def self.start(options)
+  def start(options)
     @options = options
     list  if options[:list]
 
@@ -15,11 +16,11 @@ class Doit
     execute(script)  if script
   end
 
-  def self.options
+  def options
     @options || {}
   end
 
-  def self.list
+  def list
     hsh = Import.list
     hsh.sort.each { |abb, long|
       puts "#{abb}\t- #{long}"
@@ -33,7 +34,7 @@ class Doit
     }
   end
 
-  def self.execute(name)
+  def execute(name)
     Import.init(name)
     unless Import.script
       puts "doit: script '#{name}' not found"
@@ -49,13 +50,13 @@ class Doit
   end
 
  private
-  def self.where_loop
+  def where_loop
     What.where.each { |w|
       matrix_loop(w)
     }
   end
 
-  def self.matrix_loop(w)
+  def matrix_loop(w)
     What.matrix.each { |mm|
       prefix = mm.empty? ? '' : "#{What.to_env(mm)}\n"
 

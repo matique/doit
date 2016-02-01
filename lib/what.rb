@@ -1,13 +1,14 @@
 require 'yaml'
 require 'doit'
 
-class What
+What = Object.new
+class << What
 
-  def self.matrix;  @matrix;  end
-  def self.where;   @where;   end
-  def self.env;     @env;     end
+  def matrix;  @matrix;  end
+  def where;   @where;   end
+  def env;     @env;     end
 
-  def self.init(script, config)
+  def init(script, config)
     @matrix = nil
     @yml   = (config && YAML.load(config)) || {}
 
@@ -28,12 +29,12 @@ class What
     info
   end
 
-  def self.to_env(hsh)
+  def to_env(hsh)
     arr = hsh.collect { |key, value| "#{key.to_s.upcase}=#{value}" }
     arr.join ' '
   end
 
-  def self.info
+  def info
     return  unless Doit.options[:verbose]
 
     My.verbose "where",  @where
@@ -43,7 +44,7 @@ class What
 
 
  private
-  def self.build_matrix
+  def build_matrix
     unless @yml.empty?
       key, value = @yml.first
       @yml.delete(key)
@@ -52,7 +53,7 @@ class What
     end
   end
 
-  def self.add_to_matrix(key, val)
+  def add_to_matrix(key, val)
     arr = Array === val ? val.collect {|v| [{key => v}] } : [{key => val}]
     @matrix = @matrix ? @matrix.product(arr) : arr
   end

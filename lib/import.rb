@@ -1,23 +1,24 @@
 require 'pathname'
 require 'erb'
 
-class Import
+Import = Object.new
+class << Import
 
-  def self.script;  @script;  end
-  def self.config;  @config;  end
+  def script;  @script;  end
+  def config;  @config;  end
 
-  def self.init(name)
+  def init(name)
     @script  = read(name)
     @config  = ERB.new(read("#{name}.yml") || '').result
     info
   end
 
 # returns Hash { 'pull' => '/home/dk/.doit/pull', ... }
-  def self.list
+  def list
     @list ||= list2
   end
 
-  def self.info
+  def info
     return  unless Doit.options[:verbose]
 
     My.verbose "SCRIPT", @script
@@ -26,7 +27,7 @@ class Import
 
 
  private
-  def self.list2
+  def list2
     res = {}
     Pathname.pwd.descend { |dir|
       doit_dir = dir + '.doit'
@@ -46,11 +47,11 @@ class Import
     res
   end
 
-  def self.read(name)
+  def read(name)
     try_ascend(".doit/#{name}")
   end
 
-  def self.try_ascend(filename)
+  def try_ascend(filename)
     Pathname.pwd.ascend { |dir|
       str = dir + filename
       return File.read(str)  if File.exists?(str)
