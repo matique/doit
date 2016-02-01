@@ -41,7 +41,11 @@ class Doit
     end
     What.init(Import.script, Import.config)
 
-    where_loop
+    What.where.each { |w|
+      puts "doit #{name} -r #{w}"
+    }  if options[:each]
+
+    where_loop  unless options[:each]
   end
 
  private

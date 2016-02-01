@@ -5,6 +5,10 @@ Executes good old shell/bash scripts locally as well as remotely.
 The environment is set by a ".yml" configuration file.
 An array environment variable triggers multiple calls of the script.
 
+The "where" in the configuration indicates where to run the script.
+
+See examples below.
+
 Installation
 ------------
   gem install doit
@@ -29,12 +33,13 @@ File Structure
 --------------
     ~/.doit/deploy          # chmod +x .doit/deploy
     ~/.doit/deploy.yml
-    $PROJ/.doit/deploy.yml  # overwrites
+    $PROJ/.doit/deploy.yml  # overwrites $HOME(~/) script/configuration
     $PROJ/.doit/push        # chmod +x .doit/deploy
     $PROJ/.doit/push.yml
 
 $PROJ/.doit/push
 ----------------
+    #! /bin/sh
     if ! (git status | grep 'nothing to commit'); then
       echo "push: commits are pending"
       exit 1
@@ -68,4 +73,4 @@ $PROJ/.doit/push
       - bob@sample.com
       - alice@customer.com
 
-Copyright (c) 2014 [Dittmar Krall], released under the MIT license
+Copyright (c) 2014-2016 [Dittmar Krall], released under the MIT license

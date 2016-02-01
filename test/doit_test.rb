@@ -37,4 +37,18 @@ describe Doit do
     assert_match /not found/, out
   end
 
+  it "tests option --each" do
+    out = noop({each: true}) {
+      Doit.execute('hello')
+    }
+    assert_match /doit hello -r/, out
+  end
+
+  it "coverage: list; option -lv" do
+    out = noop({verbose: true, list: true}) {
+      Doit.start({verbose: true, list: true})
+    }
+    assert_match /just a test\n/, out
+  end
+
 end
