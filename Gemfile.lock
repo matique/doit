@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    doit (0.2.9)
+    doit (0.3.0)
       micro-optparse (~> 1)
 
 GEM
@@ -29,6 +29,3 @@ DEPENDENCIES
   observr
   rake
   simplecov
-
-BUNDLED WITH
-   1.11.2
