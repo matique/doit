@@ -1,6 +1,7 @@
-class My
+My = Object.new
+class << My
 
-  def self.verbose(what, txt)
+  def verbose(what, txt)
     marker = '*'*4
     arr = txt
     arr = txt ? txt.split("\n") : ''  unless Array === txt

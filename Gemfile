@@ -8,7 +8,8 @@ end
 
 group :test, :development do
   gem 'rake'
-  gem 'watchr'
+  gem 'observr'
+  gem 'minitest'
 end
 
 gemspec

@@ -1,8 +1,9 @@
-class Run
+Run = Object.new
+class << Run
 
-  def self.ssh; @ssh; end
+  def ssh; @ssh; end
 
-  def self.init(cmds, where)
+  def init(cmds, where)
     aster = '*'*24
     puts "#{aster} #{where} #{aster}"
     @ssh = nil
@@ -21,12 +22,12 @@ class Run
     @ssh = "ssh #{host}"  if host
   end
 
-  def self.info
+  def info
     My.verbose('SSH', @ssh)
     My.verbose('cmds', @cmds)
   end
 
-  def self.run
+  def run
     here = '___EOS___'
     silent = Doit.options[:silent] ? '>/dev/null' : ''
     cmd = "cat <<'#{here}\' | #{@ssh} bash -i -l #{silent} 2>&1"
