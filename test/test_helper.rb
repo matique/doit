@@ -1,3 +1,4 @@
+require 'what'
 require 'simplecov'
 SimpleCov.start do
   add_filter 'test'
@@ -11,7 +12,7 @@ def noop(options = {noop: true}, &block)
 
   out = '---'
   Doit.stub :options, options do
-    out, err = capture_io do
+    out, _err = capture_io do
       block.call
     end
   end

@@ -5,18 +5,18 @@ describe My do
 
   it "verbose" do
     h = 'hello'
-    out, err = capture_io do
+    _out, _err = capture_io do
       My.verbose('a', h)
     end
-    assert_match /#{h}/, out
+    assert_match(/#{h}/, _out)
   end
 
   it "verbose text" do
     h = 'hello'
-    out, err = capture_io do
+    _out, _err = capture_io do
       My.verbose('a', "#{h}\nx\n")
     end
-    assert_match /#{h}/, out
+    assert_match(/#{h}/, _out)
   end
 
 end

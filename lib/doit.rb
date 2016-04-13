@@ -1,7 +1,6 @@
 require 'my'
 require 'run'
 require 'import'
-require 'what'
 
 Doit = Object.new
 class << Doit
@@ -17,7 +16,8 @@ class << Doit
   end
 
   def options
-    @options || {}
+    @options ||= {}
+    @options
   end
 
   def list

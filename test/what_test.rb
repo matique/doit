@@ -1,5 +1,4 @@
 require 'test_helper'
-require 'what'
 require 'my'
 
 describe What do
@@ -20,7 +19,7 @@ describe What do
 
   it "coverage: #info" do
     Doit.stub :options, {verbose: true} do
-      out, err = capture_io do
+      _out, _err = capture_io do
 	What.init('', '')
 	What.info
       end

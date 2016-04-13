@@ -4,8 +4,8 @@ require 'erb'
 Import = Object.new
 class << Import
 
-  def script;  @script;  end
-  def config;  @config;  end
+  def script;  @script ||= nil; @script;  end
+  def config;  @config ||= nil; @config;  end
 
   def init(name)
     @script  = read(name)
@@ -54,7 +54,7 @@ class << Import
   def try_ascend(filename)
     Pathname.pwd.ascend { |dir|
       str = dir + filename
-      return File.read(str)  if File.exists?(str)
+      return File.read(str)  if File.exist?(str)
     }
     nil
   end

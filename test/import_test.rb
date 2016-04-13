@@ -15,7 +15,7 @@ describe Import do
 
   it "list" do
     Import.init('hello')
-    assert_match /\/\.doit\/hello$/, Import.list['hello']
+    assert_match(/\/\.doit\/hello$/, Import.list['hello'])
   end
 
   it "info" do
@@ -23,8 +23,8 @@ describe Import do
 	Import.init('hello')
 	Import.info
     }
-    assert_match /SCRIPT/, out
-    assert_match /CONFIG/, out
+    assert_match(/SCRIPT/, out)
+    assert_match(/CONFIG/, out)
   end
 
   it "coverage: script" do
