@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gemspec
+
 gem 'micro-optparse'
 
 group :test do
@@ -12,4 +14,3 @@ group :test, :development do
   gem 'minitest'
 end
 
-gemspec

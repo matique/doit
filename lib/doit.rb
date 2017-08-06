@@ -1,6 +1,7 @@
 require 'my'
 require 'run'
 require 'import'
+require 'what'
 
 Doit = Object.new
 class << Doit
