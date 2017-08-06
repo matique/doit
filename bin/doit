@@ -6,6 +6,7 @@ $:.unshift lib unless $:.include?(lib)
 require 'doit'
 require 'micro-optparse'
 require 'globals'
+require 'what'
 
 options = Parser.new do |p|
    p.banner = "Usage: doit script... [options] # execute locally or remotely"
