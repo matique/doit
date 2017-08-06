@@ -1,4 +1,4 @@
-require 'what'
+require 'what'  unless defined?(What)
 require 'simplecov'
 SimpleCov.start do
   add_filter 'test'
