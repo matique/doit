@@ -23,11 +23,13 @@ Options
 -------
     -l, --[no-]list          Lists available scripts
     -r, --remote ["host"]    remote host or comma separated hosts
+    -e, --[no-]each          Lists each remote command (no execution)
     -s, --[no-]silent        run silently; suppress output
     -v, --[no-]verbose       Enable verbose output
     -n, --[no-]noop          Suppress execution of commannds
     -h, --help               Show this message
     -V, --version            Print version
+
 
 File Structure
 --------------
@@ -73,4 +75,4 @@ $PROJ/.doit/push
       - bob@sample.com
       - alice@customer.com
 
-Copyright (c) 2014-2016 [Dittmar Krall], released under the MIT license
+Copyright (c) 2014-2017 [Dittmar Krall], released under the MIT license
