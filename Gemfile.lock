@@ -10,7 +10,7 @@ GEM
     docile (1.1.5)
     json (2.1.0)
     micro-optparse (1.2.1)
-    minitest (5.11.1)
+    minitest (5.10.3)
     rake (12.3.0)
     simplecov (0.15.1)
       docile (~> 1.1.0)
