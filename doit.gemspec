@@ -25,6 +25,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'bundle-audit'
   s.add_development_dependency 'flay'
   s.add_development_dependency 'license_finder'
+  s.add_development_dependency 'rails-erd'
 
 #  s.add_development_dependency 'micro-optparse', '~> 1'
   s.add_development_dependency 'minitest'
