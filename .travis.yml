@@ -3,8 +3,8 @@ sudo: false
 
 rvm:
   - 2.5.1
-  - 2.5.0
-  - 2.4.1
+#  - 2.5.0
+#  - 2.4.1
 #  - 2.3.0  # tested; no longer in CI
 #  - 2.2.3  # tested; no longer in CI
 #  - 2.0.0  # tested; no longer in CI

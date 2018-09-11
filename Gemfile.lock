@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    doit (0.3.4)
+    doit (0.3.5)
       micro-optparse (~> 1)
 
 GEM
