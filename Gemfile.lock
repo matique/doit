@@ -36,7 +36,7 @@ GEM
     i18n (1.1.0)
       concurrent-ruby (~> 1.0)
     json (2.1.0)
-    license_finder (5.4.0)
+    license_finder (5.4.1)
       bundler
       rubyzip
       thor
@@ -93,4 +93,4 @@ DEPENDENCIES
   slim
 
 BUNDLED WITH
-   1.16.3
+   1.16.1
