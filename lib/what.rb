@@ -4,9 +4,9 @@ require 'doit'
 What = Object.new
 class << What
 
-  def matrix;  @matrix;  end
-  def where;   @where;   end
-  def env;     @env;     end
+  attr_reader :matrix
+  attr_reader :where
+  attr_reader :env
 
   def init(script, config)
     @matrix = nil

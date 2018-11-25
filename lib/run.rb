@@ -1,7 +1,7 @@
 Run = Object.new
 class << Run
 
-  def ssh; @ssh; end
+  attr_reader :ssh
 
   def init(cmds, where)
     aster = '*'*24

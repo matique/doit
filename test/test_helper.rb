@@ -14,7 +14,7 @@ def noop(options = {noop: true}, &block)
   out = '---'
   Doit.stub :options, options do
     out, _err = capture_io do
-      block.call
+      yield
     end
   end
   out
