@@ -1,11 +1,20 @@
+# frozen_string_literal: true
+
 require 'pathname'
 require 'erb'
 
 Import = Object.new
 class << Import
 
-  def script;  @script ||= nil; @script;  end
-  def config;  @config ||= nil; @config;  end
+  def script
+    @script ||= nil
+    @script
+  end
+
+  def config
+    @config ||= nil
+    @config
+  end
 
   def init(name)
     @script  = read(name)
@@ -21,10 +30,9 @@ class << Import
   def info
     return  unless Doit.options[:verbose]
 
-    My.verbose "SCRIPT", @script
-    My.verbose "CONFIG(yml)", @config
+    My.verbose 'SCRIPT', @script
+    My.verbose 'CONFIG(yml)', @config
   end
-
 
  private
   def list2

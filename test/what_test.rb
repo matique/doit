@@ -4,7 +4,7 @@ require 'my'
 describe What do
 
   it "is robust against empty params" do
-    What.init('', '')
+    What.init('')
     assert_equal [Dir.pwd], What.where
     assert_equal [{}], What.matrix
   end
@@ -20,24 +20,24 @@ describe What do
   it "coverage: #info" do
     Doit.stub :options, {verbose: true} do
       _out, _err = capture_io do
-	What.init('', '')
+        What.init('')
 	What.info
       end
     end
   end
 
   it "builds simple matrix" do
-    What.init('', "a: 1\n")
+    What.init("a: 1\n")
     assert_equal [{"a"=>1}], What.matrix
   end
 
   it "builds matrix" do
-    What.init('', "a:\n - 1\n - 2\n")
+    What.init("a:\n - 1\n - 2\n")
     assert_equal [{"a"=>1}, {"a"=>2}], What.matrix
   end
 
   it "builds product matrix" do
-    What.init('', "a:\n - 1\nb:\n - 3\n - 4\n")
+    What.init("a:\n - 1\nb:\n - 3\n - 4\n")
     assert_equal [{"a"=>1, "b"=>3}, {"a"=>1, "b"=>4}], What.matrix
   end
 

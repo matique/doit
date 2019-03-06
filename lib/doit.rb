@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'my'
 require 'run'
 require 'import'
@@ -25,10 +27,12 @@ class << Doit
     hsh.sort.each { |abb, long|
       puts "#{abb}\t- #{long}"
       next  unless options[:verbose]
+
       lines = `grep -i 'usage\\|summary' #{long} | grep '^#'`.split("\n")
       lines.each { |line|
 	next  unless line
 	next  if line.empty?
+
 	puts "\t  #{line}"
       }
     }
@@ -40,11 +44,9 @@ class << Doit
       puts "doit: script '#{name}' not found"
       return
     end
-    What.init(Import.script, Import.config)
+    What.init(Import.config)
 
-    What.where.each { |w|
-      puts "doit #{name} -r #{w}"
-    }  if options[:each]
+    What.where.each { |w| puts "doit #{name} -r #{w}" } if options[:each]
 
     where_loop  unless options[:each]
   end
@@ -56,18 +58,18 @@ class << Doit
     }
   end
 
-  def matrix_loop(w)
+  def matrix_loop(where)
     What.matrix.each { |mm|
       prefix = mm.empty? ? '' : "#{What.to_env(mm)}\n"
 
       What.env.each { |en|
-	prefix2 = en.empty? ? '' : "#{en}\n"
+        prefix2 = en.empty? ? '' : "#{en}\n"
 
-	cmds = Import.script
-	cmds = @argv + prefix + prefix2 + cmds
-	Run.init cmds, w
-	Run.info  if options[:verbose]
-	Run.run
+        cmds = Import.script
+        cmds = @argv + prefix + prefix2 + cmds
+        Run.init cmds, where
+        Run.info  if options[:verbose]
+        Run.run
       }
     }
   end

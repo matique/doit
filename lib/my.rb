@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 My = Object.new
 class << My
 
   def verbose(what, txt)
-    marker = '*'*4
+    marker = '*' * 4
     arr = txt
     arr = txt ? txt.split("\n") : ''  unless Array === txt
     if arr.length > 1

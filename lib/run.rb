@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 Run = Object.new
 class << Run
 
   attr_reader :ssh
 
   def init(cmds, where)
-    aster = '*'*24
+    aster = '*' * 24
     puts "#{aster} #{where} #{aster}"
     @ssh = nil
     @cmds = cmds
@@ -18,7 +20,7 @@ class << Run
       dir = where
     end
 
-    @cmds = "cd; cd #{dir}\n" + @cmds  unless dir && dir.empty?
+    @cmds = "cd; cd #{dir}\n" + @cmds  unless dir&.empty?
     @ssh = "ssh #{host}"  if host
   end
 
@@ -33,10 +35,10 @@ class << Run
     cmd = "cat <<'#{here}\' | #{@ssh} bash -i -l #{silent} 2>&1"
     cmds = "#{cmd}\n#{@cmds}#{here}\n"
 
-    unless Doit.options[:noop]
-      IO.popen(cmds) { |p| p.each { |f| puts f } }
-    else
+    if Doit.options[:noop]
       My.verbose('noop', cmds)
+    else
+      IO.popen(cmds) { |p| p.each { |f| puts f } }
     end
   end
 

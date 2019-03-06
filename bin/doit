@@ -1,7 +1,8 @@
-#!/usr/bin/env ruby
+#! /usr/bin/env ruby
 
-lib = File.expand_path('../../lib/', __FILE__)
-$:.unshift lib unless $:.include?(lib)
+lib = File.expand_path('../lib/', __dir__)
+# $:.unshift lib unless $:.include?(lib)
+$LOAD_PATH.unshift lib unless $LOAD_PATH.include?(lib)
 
 require 'doit'
 require 'micro-optparse'
@@ -9,11 +10,12 @@ require 'globals'
 require 'what'
 
 options = Parser.new do |p|
-   p.banner = "Usage: doit script... [options] # execute locally or remotely"
+   p.banner = 'Usage: doit script... [options] # execute locally or remotely'
    p.version = "doit #{Globals::VERSION}"
    p.option :list, 'Lists available scripts'
    p.option :each, 'Lists each remote command (no execution)'
-   p.option :remote, 'Remote host or comma separated hosts', default: '...', optional: true
+   p.option :remote, 'Remote host or comma separated hosts',
+            default: '...', optional: true
    p.option :silent, 'Run silently; suppress output'
    p.option :verbose, 'Enable verbose output'
    p.option :noop, 'Suppress execution of commannds'

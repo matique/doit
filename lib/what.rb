@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'yaml'
 require 'doit'
 
@@ -8,7 +10,7 @@ class << What
   attr_reader :where
   attr_reader :env
 
-  def init(script, config)
+  def init(config)
     @matrix = nil
     @yml   = (config && YAML.load(config)) || {}
 
@@ -37,24 +39,25 @@ class << What
   def info
     return  unless Doit.options[:verbose]
 
-    My.verbose "where",  @where
-    My.verbose "matrix", @matrix
-    My.verbose "env",    @env
+    My.verbose 'where',  @where
+    My.verbose 'matrix', @matrix
+    My.verbose 'env',    @env
   end
-
 
  private
   def build_matrix
-    unless @yml.empty?
-      key, value = @yml.first
-      @yml.delete(key)
-      add_to_matrix(key, value)
-      build_matrix
-    end
+    return  if @yml.empty?
+
+    key, value = @yml.first
+    @yml.delete(key)
+    add_to_matrix(key, value)
+    build_matrix
   end
 
   def add_to_matrix(key, val)
-    arr = Array === val ? val.collect {|v| [{key => v}] } : [{key => val}]
+    arr = Array === val ?
+      val.collect { |v| [{ key => v }] } :
+      [{ key => val }]
     @matrix = @matrix ? @matrix.product(arr) : arr
   end
 
