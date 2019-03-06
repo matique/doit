@@ -8,7 +8,7 @@ require 'what'
 
 require 'minitest/autorun'
 
-def noop(options = {noop: true}, &block)
+def noop(options = { noop: true }, &block)
   return 'noop: missing block' unless block
 
   out = '---'

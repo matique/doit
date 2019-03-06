@@ -3,20 +3,20 @@ require 'my'
 
 describe My do
 
-  it "verbose" do
+  it 'verbose' do
     h = 'hello'
-    _out, _err = capture_io do
+    out, _err = capture_io do
       My.verbose('a', h)
     end
-    assert_match(/#{h}/, _out)
+    assert_match(/#{h}/, out)
   end
 
-  it "verbose text" do
+  it 'verbose text' do
     h = 'hello'
-    _out, _err = capture_io do
+    out, _err = capture_io do
       My.verbose('a', "#{h}\nx\n")
     end
-    assert_match(/#{h}/, _out)
+    assert_match(/#{h}/, out)
   end
 
 end

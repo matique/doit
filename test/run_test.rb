@@ -5,7 +5,7 @@ require 'doit'
 
 describe Run do
 
-  it "coverage #info" do
+  it 'coverage #info' do
     _out, _err = capture_io do
       Run.init('', '')
       Run.info
@@ -40,14 +40,14 @@ describe Run do
     end
   end
 
-  it "coverage #run" do
+  it 'coverage #run' do
     _out, _err = capture_io do
       Run.init('', '')
       Run.run
     end
   end
 
-  it "coverage #run noop" do
+  it 'coverage #run noop' do
     out = noop {
 	Run.init('', '')
 	Run.run

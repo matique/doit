@@ -5,21 +5,21 @@ require 'my'
 
 describe Import do
 
-  it "init fails with empty" do
+  it 'init fails with empty' do
     assert_raises(Errno::EISDIR) { Import.init('') }
   end
 
-  it "init" do
+  it 'init' do
     Import.init('hello')
   end
 
-  it "list" do
+  it 'list' do
     Import.init('hello')
     assert_match(/\/\.doit\/hello$/, Import.list['hello'])
   end
 
-  it "info" do
-    out = noop({verbose: true}) {
+  it 'info' do
+    out = noop(verbose: true) {
 	Import.init('hello')
 	Import.info
     }
@@ -27,11 +27,11 @@ describe Import do
     assert_match(/CONFIG/, out)
   end
 
-  it "coverage: script" do
+  it 'coverage: script' do
     Import.script
   end
 
-  it "coverage: config" do
+  it 'coverage: config' do
     Import.config
   end
 

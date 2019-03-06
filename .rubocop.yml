@@ -1,5 +1,7 @@
 # inherit_from: .rubocop_todo.yml
 
+# inherit_from: .rubocop_todo.yml
+
 # rubocop --auto-gen-config
 # rubocop
 # rubocop:disable all
@@ -9,12 +11,12 @@
 AllCops:
   Include:
 #    - 'app/**/*.rb'
-    - 'bin/**/*.rb'
+#    - 'bin/**/*.rb'
 #    - 'config/**/*.rb'
 #    - 'db/**/*.rb'
     - 'lib/**/*.rb'
 #    - 'test/**/*.rb'
-#    - '**/*.gemfile'
+    - '**/*.gemfile'
 #    - '**/*.gemspec'
 #    - '**/*.rake'
 #    - '**/*.ru'
@@ -60,8 +62,9 @@ Security/YAMLLoad:
 
 Style/BlockDelimiters:
   Enabled: false
-#Style/FrozenStringLiteralComment:
-#  Enabled: false
+Style/FrozenStringLiteralComment:
+  Exclude:
+    - 'test/**/*.rb'
 Style/WhenThen:
   Exclude:
     - '.watchr'
