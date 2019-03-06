@@ -75,4 +75,4 @@ $PROJ/.doit/push
       - bob@sample.com
       - alice@customer.com
 
-Copyright (c) 2014-2017 [Dittmar Krall], released under the MIT license
+Copyright (c) 2014-2019 [Dittmar Krall], released under the MIT license.
