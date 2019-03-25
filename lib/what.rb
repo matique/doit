@@ -1,4 +1,4 @@
-# frozen_string_literal: true
+# rubocop: disable all
 
 require 'yaml'
 require 'doit'
@@ -26,7 +26,7 @@ class << What
 
     build_matrix
     @matrix ||= []
-    @matrix = [@matrix]  unless Array === @matrix.first
+    @matrix = [@matrix]  unless @matrix.first.is_a?(Array)
     @matrix.map! { |m| m.flatten.inject({}) { |hsh, h| hsh.merge(h) } }
     info
   end
@@ -55,7 +55,7 @@ class << What
   end
 
   def add_to_matrix(key, val)
-    arr = Array === val ?
+    arr = val.is_a?(Array) ?
       val.collect { |v| [{ key => v }] } :
       [{ key => val }]
     @matrix = @matrix ? @matrix.product(arr) : arr

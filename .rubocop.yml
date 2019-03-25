@@ -1,7 +1,5 @@
 # inherit_from: .rubocop_todo.yml
 
-# inherit_from: .rubocop_todo.yml
-
 # rubocop --auto-gen-config
 # rubocop
 # rubocop:disable all
@@ -10,25 +8,25 @@
 
 AllCops:
   Include:
-#    - 'app/**/*.rb'
+    - 'app/**/*.rb'
 #    - 'bin/**/*.rb'
+
 #    - 'config/**/*.rb'
-#    - 'db/**/*.rb'
+    - 'db/**/*.rb'
     - 'lib/**/*.rb'
-#    - 'test/**/*.rb'
+    - 'test/**/*.rb'
     - '**/*.gemfile'
-#    - '**/*.gemspec'
+    - '**/*.gemspec'
 #    - '**/*.rake'
-#    - '**/*.ru'
-#    - '**/Gemfile'
+    - '**/*.ru'
+    - '**/Gemfile'
 #    - '**/Rakefile'
 
-#AllCops:
-#  Exclude:
-#    - 'db/**/*'
+  Exclude:
+    - 'db/**/*'
 #    - 'config/**/*'
 #    - 'script/**/*'
-#    - 'bin/{rails,rake}'
+    - 'bin/{rails,rake,spring}'
 #    - 'spec/**/*'
 #    - !ruby/regexp /old_and_unused\.rb$/
 
@@ -42,11 +40,15 @@ Layout/AlignArray:
   Enabled: false
 Layout/CommentIndentation:
   Enabled: false
+Layout/EmptyLines:
+  Enabled: false
 Layout/EmptyLinesAroundAccessModifier:
   Enabled: false
 Layout/EmptyLinesAroundBlockBody:
   Enabled: false
 Layout/EmptyLinesAroundClassBody:
+  Enabled: false
+Layout/EmptyLinesAroundModuleBody:
   Enabled: false
 Layout/ExtraSpacing:
   Enabled: false
@@ -54,21 +56,36 @@ Layout/IndentArray:
   Enabled: false
 Layout/IndentationWidth:
   Enabled: false
+Layout/LeadingCommentSpace:
+  Enabled: false
 Layout/Tab:
   Enabled: false
 
+Lint/UnusedBlockArgument:
+  Enabled: false
+Metrics/BlockLength:
+  Enabled: false
+Security/JSONLoad:
+  Enabled: false
 Security/YAMLLoad:
   Enabled: false
 
 Style/BlockDelimiters:
   Enabled: false
+Style/ClassAndModuleChildren:
+  Enabled: false
+Style/Documentation:
+  Enabled: false
+Style/FormatString:
+  Enabled: false
 Style/FrozenStringLiteralComment:
-  Exclude:
-    - 'test/**/*.rb'
+  Enabled: false
+#  Exclude:
+#    - 'test/**/*.rb'
+Style/NumericLiterals:
+  Enabled: false
+Style/RegexpLiteral:
+  Enabled: false
 Style/WhenThen:
   Exclude:
     - '.watchr'
-
-
-
-
