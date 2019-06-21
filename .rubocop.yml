@@ -52,7 +52,7 @@ Layout/EmptyLinesAroundModuleBody:
   Enabled: false
 Layout/ExtraSpacing:
   Enabled: false
-Layout/IndentArray:
+Layout/IndentFirstArrayElement:
   Enabled: false
 Layout/IndentationWidth:
   Enabled: false
