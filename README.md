@@ -36,7 +36,7 @@ File Structure
     ~/.doit/deploy          # chmod +x .doit/deploy
     ~/.doit/deploy.yml
     $PROJ/.doit/deploy.yml  # overwrites $HOME(~/) script/configuration
-    $PROJ/.doit/push        # chmod +x .doit/deploy
+    $PROJ/.doit/push        # chmod +x .doit/push
     $PROJ/.doit/push.yml
 
 $PROJ/.doit/push
