@@ -10,15 +10,15 @@ require 'globals'
 require 'what'
 
 options = Parser.new do |p|
-   p.banner = 'Usage: doit script... [options] # execute locally or remotely'
-   p.version = "doit #{Globals::VERSION}"
-   p.option :list, 'Lists available scripts'
-   p.option :each, 'Lists each remote command (no execution)'
-   p.option :remote, 'Remote host or comma separated hosts',
-            default: '...', optional: true
-   p.option :silent, 'Run silently; suppress output'
-   p.option :verbose, 'Enable verbose output'
-   p.option :noop, 'Suppress execution of commannds'
+  p.banner = 'Usage: doit script... [options] # execute locally or remotely'
+  p.version = "doit #{Globals::VERSION}"
+  p.option :list, 'Lists available scripts'
+  p.option :each, 'Lists each remote command (no execution)'
+  p.option :remote, 'Remote host or comma separated hosts',
+           default: '...', optional: true
+  p.option :silent, 'Run silently; suppress output'
+  p.option :verbose, 'Enable verbose output'
+  p.option :noop, 'Suppress execution of commannds'
 end.process!
 
 Doit.start(options)
