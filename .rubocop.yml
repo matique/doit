@@ -1,59 +1,10 @@
-# rubocop --auto-gen-config
-# rubocop
-# rubocop:disable all
-
-#inherit_from: .rubocop_todo.yml
+inherit_from:
+  - ~/configs/.rubocop.yml
 
 AllCops:
   Include:
-    - 'app/**/*.rb'
-    - 'db/**/*.rb'
     - 'lib/**/*.rb'
-    - 'test/**/*.rb'
-    - '**/*.gemfile'
-    - '**/*.ru'
 
   Exclude:
-    - '**/*.gemspec'
-    - 'bin/doit'
+    - 'bin/**/*'
     - 'test/**/*'
-#    - !ruby/regexp /old_and_unused\.rb$/
-
-Bundler/OrderedGems:
-  Exclude:
-    - 'Gemfile'
-
-Layout/AccessModifierIndentation:
-  Enabled: false
-Layout/CommentIndentation:
-  Enabled: false
-Layout/EmptyLines:
-  Enabled: false
-Layout/EmptyLinesAroundAccessModifier:
-  Enabled: false
-#Layout/ExtraSpacing:
-#  Enabled: false
-#Layout/FirstArrayElementIndentation:
-#  Enabled: false
-#Layout/IndentationWidth:
-#  Enabled: false
-#Layout/LeadingCommentSpace:
-#  Enabled: false
-
-#Lint/UnusedBlockArgument:
-#  Enabled: false
-#Metrics/BlockLength:
-#  Enabled: false
-#Security/JSONLoad:
-#  Enabled: false
-#Security/YAMLLoad:
-#  Enabled: false
-
-Style/Documentation:
-  Enabled: false
-Style/HashEachMethods:
-  Enabled: true
-Style/HashTransformKeys:
-  Enabled: true
-Style/HashTransformValues:
-  Enabled: true

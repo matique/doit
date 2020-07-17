@@ -5,7 +5,8 @@ bundler_args: --without production
 script: "bundle exec rake test"
 
 rvm:
-  - 2.6.5  # 2019-10-29
+  - 2.6.6  # 2020-07-17
+#  - 2.6.5  # 2019-10-29
 #  - 2.6.4  # 2019-10-15
 #  - 2.6.3  # 2019-06-21
 #  - 2.6.1
