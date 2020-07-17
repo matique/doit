@@ -1,8 +1,8 @@
 language: ruby
 sudo: false
 
-bundler_args: --without production
-#bundle config set without production
+#bundler_args: --without production
+bundle config set without production
 script: "bundle exec rake test"
 
 rvm:
