@@ -1,7 +1,8 @@
 # rubocop: disable all
 
 module Globals
-  VERSION = '0.3.9'     # 2020-07-17
+  VERSION = '1.0.0'     # 2020-10-26
+# VERSION = '0.3.9'     # 2020-07-17
 # VERSION = '0.3.8'     # 2020-02-26
 # VERSION = '0.3.7'     # 2019-10-15
 # VERSION = '0.3.6'     # 2019-03-06

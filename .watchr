@@ -17,16 +17,13 @@ end
 def run_it(type, file)
   case type
   when 'test';  run %Q(ruby -I"lib:test" -r rubygems #{file})
-#  when 'test';  run %(rails test #{file})
-  when 'spec';  run %(spring rspec -X #{file})
   else;         puts "#{H} unknown type: #{type}, file: #{file}"
   end
 end
 
 def run_all_tests
   puts "\n#{HH} Running all tests #{HH}\n"
-  system "spring stop"
-  %w[test].each { |dir| run "rails #{dir}"  if  File.exist?(dir) }
+  %w[test].each { |dir| run "rake #{dir}"  if  File.exist?(dir) }
 end
 
 def run_matching_files(base)
