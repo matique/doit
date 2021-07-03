@@ -1,18 +1,18 @@
-if ENV['COVERAGE']
-  require 'simplecov'
+if ENV["COVERAGE"]
+  require "simplecov"
   SimpleCov.start do
-    add_filter '/test/'
+    add_filter "/test/"
   end
 end
 
-require 'what'
+require "what"
 
-require 'minitest/autorun'
+require "minitest/autorun"
 
-def noop(options = { noop: true }, &block)
-  return 'noop: missing block' unless block
+def noop(options = {noop: true}, &block)
+  return "noop: missing block" unless block
 
-  out = '---'
+  out = "---"
   Doit.stub :options, options do
     out, _err = capture_io do
       yield

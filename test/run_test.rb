@@ -1,58 +1,56 @@
-require 'test_helper'
-require 'run'
-require 'my'
-require 'doit'
+require "test_helper"
+require "run"
+require "my"
+require "doit"
 
 describe Run do
-
-  it 'coverage #info' do
+  it "coverage #info" do
     _out, _err = capture_io do
-      Run.init('', '')
+      Run.init("", "")
       Run.info
     end
   end
 
   it "where '' returns nil" do
     _out, _err = capture_io do
-      Run.init('', '')
+      Run.init("", "")
       assert_equal nil, Run.ssh
     end
   end
 
   it "where 'a' returns nil" do
     _out, _err = capture_io do
-      Run.init('', 'a')
+      Run.init("", "a")
       assert_equal nil, Run.ssh
     end
   end
 
   it "where 'a@b' returns 'ssh a@b'" do
     _out, _err = capture_io do
-      Run.init('', 'a@b')
-      assert_equal 'ssh a@b', Run.ssh
+      Run.init("", "a@b")
+      assert_equal "ssh a@b", Run.ssh
     end
   end
 
   it "where 'a@b:c' returns 'ssh a@b'" do
     _out, _err = capture_io do
-      Run.init('', 'a@b:c')
-      assert_equal 'ssh a@b', Run.ssh
+      Run.init("", "a@b:c")
+      assert_equal "ssh a@b", Run.ssh
     end
   end
 
-  it 'coverage #run' do
+  it "coverage #run" do
     _out, _err = capture_io do
-      Run.init('', '')
+      Run.init("", "")
       Run.run
     end
   end
 
-  it 'coverage #run noop' do
+  it "coverage #run noop" do
     out = noop {
-	Run.init('', '')
-	Run.run
+      Run.init("", "")
+      Run.run
     }
     assert_match(/EOS/, out)
   end
-
 end
