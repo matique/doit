@@ -18,6 +18,7 @@ end
 def run_it(type, file)
   case type
   when "test" then run %(bundle exec ruby -I test #{file})
+  #  when 'spec';  run %(spring rspec -X #{file})
   else; puts "#{H} unknown type: #{type}, file: #{file}"
   end
 end
