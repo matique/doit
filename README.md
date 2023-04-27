@@ -1,5 +1,6 @@
-Doit
-====
+# Doit
+
+[![Gem Version](https://badge.fury.io/rb/doit.png)](http://badge.fury.io/rb/doit)
 
 Executes good old shell/bash scripts locally as well as remotely.
 The environment is set by a ".yml" configuration file.
@@ -9,18 +10,18 @@ The "where" in the configuration indicates where to run the script.
 
 See examples below.
 
-Installation
-------------
+## Installation
+
   gem install doit
 
-Usage
------
+## Usage
+
     doit script... [options]
     doit push
     doit deploy tag
 
-Options
--------
+## Options
+
     -l, --[no-]list          Lists available scripts
     -r, --remote ["host"]    remote host or comma separated hosts
     -e, --[no-]each          Lists each remote command (no execution)
@@ -31,16 +32,16 @@ Options
     -V, --version            Print version
 
 
-File Structure
---------------
+## File Structure
+
     ~/.doit/deploy          # chmod +x .doit/deploy
     ~/.doit/deploy.yml
     $PROJ/.doit/deploy.yml  # overwrites $HOME(~/) script/configuration
     $PROJ/.doit/push        # chmod +x .doit/push
     $PROJ/.doit/push.yml
 
-$PROJ/.doit/push
-----------------
+## $PROJ/.doit/push
+
     #! /bin/sh
     if ! (git status | grep 'nothing to commit'); then
       echo "push: commits are pending"
@@ -61,13 +62,13 @@ $PROJ/.doit/push
       ;;
     esac
 
-~/.doit/deploy
---------------
+## ~/.doit/deploy
+
     uname -a
     git status
 
-~/.doit/deploy.yml
-------------------
+## ~/.doit/deploy.yml
+
     env:
       - DIR=tmp OPTION=run
       - DIR=proj OPTION=list
@@ -75,4 +76,9 @@ $PROJ/.doit/push
       - bob@sample.com
       - alice@customer.com
 
-Copyright (c) 2014-2019 [Dittmar Krall], released under the MIT license.
+## Miscellaneous
+
+Copyright (c) 2014-2023 Dittmar Krall (www.matiq.com),
+released under the MIT license:
+
+* https://opensource.org/licenses/MIT
