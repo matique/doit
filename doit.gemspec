@@ -10,6 +10,7 @@ Gem::Specification.new do |s|
   s.authors = ["Dittmar Krall"]
   s.email = "dittmar.krall@matiq.de"
   s.homepage = "http://www.matiq.de"
+  s.metadata["source_code_uri"] = "https://github.com/matique/doit"
   s.license = "MIT"
 
   s.add_dependency "micro-optparse", "~> 1"
