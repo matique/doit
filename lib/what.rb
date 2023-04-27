@@ -1,7 +1,5 @@
-# rubocop: disable all
-
-require 'yaml'
-require 'doit'
+require "yaml"
+require "doit"
 
 What = Object.new
 class << What
@@ -14,13 +12,13 @@ class << What
     @matrix = nil
     @yml   = (config && YAML.load(config)) || {}
 
-    @where = @yml.delete('where')
-    @env   = @yml.delete('env')
-    @env ||= ['']
+    @where = @yml.delete("where")
+    @env   = @yml.delete("env")
+    @env ||= [""]
     @env   = [@env].flatten.compact
 
     remote = Doit.options[:remote]
-    @where   = remote  if remote && remote != '---'
+    @where   = remote  if remote && remote != "---"
     @where ||= Dir.pwd   # default is current directory
     @where   = [@where].flatten.compact
 
@@ -33,15 +31,15 @@ class << What
 
   def to_env(hsh)
     arr = hsh.collect { |key, value| "#{key.to_s.upcase}=#{value}" }
-    arr.join ' '
+    arr.join " "
   end
 
   def info
     return  unless Doit.options[:verbose]
 
-    My.verbose 'where',  @where
-    My.verbose 'matrix', @matrix
-    My.verbose 'env',    @env
+    My.verbose "where",  @where
+    My.verbose "matrix", @matrix
+    My.verbose "env",    @env
   end
 
  private

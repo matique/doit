@@ -1,8 +1,6 @@
-# rubocop: disable all
-
-require 'my'
-require 'run'
-require 'import'
+require "my"
+require "run"
+require "import"
 
 Doit = Object.new
 class << Doit
@@ -12,8 +10,8 @@ class << Doit
     list  if options[:list]
 
     script = ARGV.shift
-    str = ARGV.map { |x| "\"#{x}\"" }.join(' ')
-    @argv = str.empty? ? '' : "set #{str}\n"
+    str = ARGV.map { |x| "\"#{x}\"" }.join(" ")
+    @argv = str.empty? ? "" : "set #{str}\n"
     execute(script)  if script
   end
 
@@ -28,7 +26,7 @@ class << Doit
       puts "#{abb}\t- #{long}"
       next  unless options[:verbose]
 
-      lines = `grep -i 'usage\\|summary' #{long} | grep '^#'`.split("\n")
+      lines = `grep -i "usage\\|summary' #{long} | grep '^#'`.split("\n")
       lines.each { |line|
 	next  unless line
 	next  if line.empty?
@@ -60,10 +58,10 @@ class << Doit
 
   def matrix_loop(where)
     What.matrix.each { |mm|
-      prefix = mm.empty? ? '' : "#{What.to_env(mm)}\n"
+      prefix = mm.empty? ? "" : "#{What.to_env(mm)}\n"
 
       What.env.each { |en|
-        prefix2 = en.empty? ? '' : "#{en}\n"
+        prefix2 = en.empty? ? "" : "#{en}\n"
 
         cmds = Import.script
         cmds = @argv + prefix + prefix2 + cmds

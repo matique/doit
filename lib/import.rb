@@ -1,7 +1,5 @@
-# rubocop: disable all
-
-require 'pathname'
-require 'erb'
+require "pathname"
+require "erb"
 
 Import = Object.new
 class << Import
@@ -18,11 +16,11 @@ class << Import
 
   def init(name)
     @script  = read(name)
-    @config  = ERB.new(read("#{name}.yml") || '').result
+    @config  = ERB.new(read("#{name}.yml") || "").result
     info
   end
 
-# returns Hash { 'pull' => '/home/dk/.doit/pull', ... }
+# returns Hash { "pull" => "/home/dk/.doit/pull", ... }
   def list
     @list ||= list2
   end
@@ -30,15 +28,15 @@ class << Import
   def info
     return  unless Doit.options[:verbose]
 
-    My.verbose 'SCRIPT', @script
-    My.verbose 'CONFIG(yml)', @config
+    My.verbose "SCRIPT", @script
+    My.verbose "CONFIG(yml)", @config
   end
 
  private
   def list2
     res = {}
     Pathname.pwd.descend { |dir|
-      doit_dir = dir + '.doit'
+      doit_dir = dir + ".doit"
       next  unless File.directory?(doit_dir)
 
       lst = []
