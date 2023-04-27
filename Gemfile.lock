@@ -22,6 +22,7 @@ GEM
     rake (13.0.6)
     regexp_parser (2.8.0)
     rexml (3.2.5)
+    ricecream (0.2.1)
     rubocop (1.50.2)
       json (~> 2.3)
       parallel (~> 1.10)
@@ -66,6 +67,7 @@ DEPENDENCIES
   minitest (~> 5)
   observr
   rake (~> 13)
+  ricecream
   simplecov
   standard
 
