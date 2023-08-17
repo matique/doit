@@ -16,8 +16,10 @@ Gem::Specification.new do |s|
   s.add_dependency "micro-optparse", "~> 1"
 
   s.files = `git ls-files`.split("\n")
+puts s.files
   s.executables = `git ls-files -- bin/*`
     .split("\n").map { |f| File.basename(f) }
+puts s.executables
   s.require_paths = ["lib"]
 
   s.add_development_dependency "rake", "~> 13"
