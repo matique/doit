@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    doit (1.0.6)
+    doit (1.0.7)
       micro-optparse (~> 1)
 
 GEM
@@ -68,9 +68,9 @@ PLATFORMS
 
 DEPENDENCIES
   doit!
-  minitest
+  minitest (~> 5)
   observr
-  rake
+  rake (~> 13)
   ricecream
   simplecov
   standard
