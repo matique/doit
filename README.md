@@ -78,7 +78,7 @@ See examples below.
 
 ## Miscellaneous
 
-Copyright (c) 2014-2023 Dittmar Krall (www.matiq.com),
+Copyright (c) 2014-2024 Dittmar Krall (www.matiq.com),
 released under the MIT license:
 
 * https://opensource.org/licenses/MIT
