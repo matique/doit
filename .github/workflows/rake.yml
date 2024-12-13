@@ -9,8 +9,8 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-latest]
-        ruby: ["3.0", "3.2", 3.3, head]
-        test_command: ["bundle exec rake test"]
+        ruby: ["3.0", "3.3", head]
+        test_command: "bundle exec rake test"
     runs-on: ${{ matrix.os }}
 
     steps:
