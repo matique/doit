@@ -1,6 +1,10 @@
 # Doit
 
-[![Gem Version](https://badge.fury.io/rb/doit.png)](http://badge.fury.io/rb/doit)
+[![Gem Version](https://badge.fury.io/rb/doit.svg)](http://badge.fury.io/rb/doit)
+[![GEM Downloads](https://img.shields.io/gem/dt/doit?color=168AFE&logo=ruby&logoColor=FE1616)](https://rubygems.org/gems/doit)
+[![rake](https://github.com/matique/doit/actions/workflows/rake.yml/badge.svg)](https://github.com/matique/doit/actions/workflows/rake.yml)
+[![Ruby Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://github.com/standardrb/standard)
+[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](http://choosealicense.com/licenses/mit/)
 
 Executes good old shell/bash scripts locally as well as remotely.
 The environment is set by a ".yml" configuration file.
@@ -79,6 +83,4 @@ See examples below.
 ## Miscellaneous
 
 Copyright (c) 2014-2024 Dittmar Krall (www.matiq.com),
-released under the MIT license:
-
-* https://opensource.org/licenses/MIT
+released under the [MIT license](https://opensource.org/licenses/MIT).

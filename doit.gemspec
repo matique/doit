@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.authors = ["Dittmar Krall"]
   s.email = "dittmar.krall@matiq.de"
-  s.homepage = "http://www.matiq.de"
+  s.homepage = "https://github.com/matique/doit"
   s.license = "MIT"
 
   s.files = `git ls-files`.split("\n")
