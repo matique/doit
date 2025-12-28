@@ -19,6 +19,6 @@ Gem::Specification.new do |s|
 
   s.add_dependency "micro-optparse", "~> 1"
 
-  s.add_development_dependency "rake", "~> 13"
-  s.add_development_dependency "minitest", "~> 5"
+  s.add_development_dependency "rake", ">= 13"
+  s.add_development_dependency "minitest", ">= 5"
 end
