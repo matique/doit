@@ -15,9 +15,10 @@ class << Doit
     execute(script) if script
   end
 
-  def options=(x)
-    @options =x
-  end
+  attr_writer :options
+  # def options=(x)
+  #   @options = x
+  # end
 
   def options
     @options ||= {}

@@ -13,7 +13,7 @@ GEM
       logger
       micro-optparse
     docile (1.4.1)
-    ffi (1.17.2)
+    ffi (1.17.3-x86_64-linux-gnu)
     json (2.18.0)
     language_server-protocol (3.17.0.5)
     lint_roller (1.1.0)
@@ -79,8 +79,7 @@ GEM
     unicode-emoji (4.2.0)
 
 PLATFORMS
-  ruby
-  x86_64-linux
+  x86_64-linux-gnu
 
 DEPENDENCIES
   cuco
@@ -96,7 +95,7 @@ CHECKSUMS
   cuco (0.1.6) sha256=c566f50099a20c41c2fa053697294b4200204d9ca5fac60e7190450c6ed66312
   docile (1.4.1) sha256=96159be799bfa73cdb721b840e9802126e4e03dfc26863db73647204c727f21e
   doit (1.1.0)
-  ffi (1.17.2) sha256=297235842e5947cc3036ebe64077584bff583cd7a4e94e9a02fdec399ef46da6
+  ffi (1.17.3-x86_64-linux-gnu) sha256=3746b01f677aae7b16dc1acb7cb3cc17b3e35bdae7676a3f568153fb0e2c887f
   json (2.18.0) sha256=b10506aee4183f5cf49e0efc48073d7b75843ce3782c68dbeb763351c08fd505
   language_server-protocol (3.17.0.5) sha256=fd1e39a51a28bf3eec959379985a72e296e9f9acfce46f6a79d31ca8760803cc
   lint_roller (1.1.0) sha256=2c0c845b632a7d172cb849cc90c1bce937a28c5c8ccccb50dfd46a485003cc87
