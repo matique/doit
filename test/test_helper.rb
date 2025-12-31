@@ -13,10 +13,12 @@ def noop(options = {noop: true}, &block)
   return "noop: missing block" unless block
 
   out = "---"
-  Doit.stub :options, options do
-    out, _err = capture_io do
-      yield
-    end
+  save_options = Doit.options
+  Doit.options = options
+  out, _err = capture_io do
+    yield
   end
+  Doit.options = save_options
+
   out
 end

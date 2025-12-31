@@ -17,12 +17,10 @@ describe What do
   end
 
   it "coverage: #info" do
-    Doit.stub :options, {verbose: true} do
-      _out, _err = capture_io do
-        What.init("")
-        What.info
-      end
-    end
+    noop(verbose: true) {
+      What.init("")
+      What.info
+    }
   end
 
   it "builds simple matrix" do

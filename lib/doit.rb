@@ -15,6 +15,10 @@ class << Doit
     execute(script) if script
   end
 
+  def options=(x)
+    @options =x
+  end
+
   def options
     @options ||= {}
     @options

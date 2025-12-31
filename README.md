@@ -81,7 +81,7 @@ See examples below.
       - bob@sample.com
       - alice@customer.com
 
-## Miscellaneous
+## License
 
-Copyright (c) 2014-2024 Dittmar Krall (www.matiq.com),
+Copyright (c) 2014-2025 Dittmar Krall (www.matiq.com),
 released under the [MIT license](https://opensource.org/licenses/MIT).

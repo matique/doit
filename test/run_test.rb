@@ -14,14 +14,14 @@ describe Run do
   it "where '' returns nil" do
     _out, _err = capture_io do
       Run.init("", "")
-      assert_equal nil, Run.ssh
+      assert_nil Run.ssh
     end
   end
 
   it "where 'a' returns nil" do
     _out, _err = capture_io do
       Run.init("", "a")
-      assert_equal nil, Run.ssh
+      assert_nil Run.ssh
     end
   end
 
