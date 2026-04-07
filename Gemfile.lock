@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    doit (1.1.0)
+    doit (1.1.1)
       micro-optparse
 
 GEM
@@ -117,7 +117,7 @@ CHECKSUMS
   ast (2.4.3) sha256=954615157c1d6a382bc27d690d973195e79db7f55e9765ac7c481c60bdb4d383
   cuco (0.1.6) sha256=c566f50099a20c41c2fa053697294b4200204d9ca5fac60e7190450c6ed66312
   docile (1.4.1) sha256=96159be799bfa73cdb721b840e9802126e4e03dfc26863db73647204c727f21e
-  doit (1.1.0)
+  doit (1.1.1)
   drb (2.2.3) sha256=0b00d6fdb50995fe4a45dea13663493c841112e4068656854646f418fda13373
   ffi (1.17.4) sha256=bcd1642e06f0d16fc9e09ac6d49c3a7298b9789bcb58127302f934e437d60acf
   ffi (1.17.4-aarch64-linux-gnu) sha256=b208f06f91ffd8f5e1193da3cae3d2ccfc27fc36fba577baf698d26d91c080df
