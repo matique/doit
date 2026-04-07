@@ -83,5 +83,5 @@ See examples below.
 
 ## License
 
-Copyright (c) 2014-2025 Dittmar Krall (www.matiq.com),
+Copyright (c) 2014-2026 Dittmar Krall (www.matiq.com),
 released under the [MIT license](https://opensource.org/licenses/MIT).
